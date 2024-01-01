@@ -24,3 +24,7 @@ Route::get('/forklift/edit', [App\Http\Controllers\ForkliftController::class, 'e
 Route::post('/forklift/update', [App\Http\Controllers\ForkliftController::class, 'update']);
 Route::get('/forklift/show', [App\Http\Controllers\ForkliftController::class, 'show']);
 //Route::get('/admin/logs', [Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+
+//payments
+Route::post('/initiatePayment', [App\Http\Controllers\MpesaController::class, 'initiatePayment'])->name('initiatePayment');
+Route::post('/callback', [App\Http\Controllers\MpesaController::class, 'handleCallback']);
