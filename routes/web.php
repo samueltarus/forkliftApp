@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', [App\Http\Controllers\ForkliftController::class, 'index']);
+Route::get('/forklift/create', [App\Http\Controllers\ForkliftController::class, 'create']);
+Route::post('/forklift/store', [App\Http\Controllers\ForkliftController::class, 'store']);
+Route::get('/forklift/edit', [App\Http\Controllers\ForkliftController::class, 'edit']);
+Route::post('/forklift/update', [App\Http\Controllers\ForkliftController::class, 'update']);
+Route::get('/forklift/show', [App\Http\Controllers\ForkliftController::class, 'show']);
+//Route::get('/admin/logs', [Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
