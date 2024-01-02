@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->string('transaction_id')->unique();
+            $table->string('merchant_request_id')->unique();
+            $table->string('mpesa_receipt_number');
             $table->string('phone');
             $table->decimal('amount', 10, 2);
             $table->string('status');
